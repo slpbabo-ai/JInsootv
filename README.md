@@ -1,22 +1,22 @@
-# 진수티비 Android 0.5.1
+# 진수티비 Android 0.5.2
 
 Android 8.0 이상용 APK입니다. Node.js·PC 서버 없이 기기에서 실제 목록·검색·회차를 처리하고, 원본 재생 페이지는 앱 브리지가 없는 별도 WebView에서 엽니다.
 
-## 0.5.1 빌드 상태
+## 0.5.2 빌드 상태
 
-- APK: `JinsuTV-0.5.1-Android.apk`
-- package `app.jinsu.tv`, versionName `0.5.1`, versionCode `6`, minSdk `26`, targetSdk `35`
+- APK: `JinsuTV-0.5.2-Android.apk`
+- package `app.jinsu.tv`, versionName `0.5.2`, versionCode `6`, minSdk `26`, targetSdk `35`
 - 크기: **2,569,810 bytes**
-- SHA-256: `aafe78ef8a7ea034c527d14982966f076e9c6f0cce9a4506a50a6e0fbf1867fb`
+- SHA-256: `e41b16058d60bb63c43b22493e6de73c55cf67f8d642b5e848e5f4986434b0d2`
 - 서명 인증서 SHA-256: `91c80fd08f32a24980cd7604f53cfd530decd97ceed913202a2a80e79b964616` — 0.5.0과 같은 키여서 기존 앱을 지우지 않고 업그레이드할 수 있는 구성입니다.
 - 빌드/정적 검증은 완료됐지만, 이 문서 작성 시점의 실제 Android 기기 WebView·설치·업그레이드·재생은 아직 검증하지 않았습니다.
 
 ### 주요 변경: 목록 연결 경로
 
-0.5.1은 목록/검색/상세 HTML에 한해 Android **시스템 WebView(Chromium) 네트워크 경로**를 우선 사용합니다. 같은 기기의 Chromium 기반 브라우저에서 열리지만 Java `HttpsURLConnection` 경로가 `커넥션 리셋`되는 경우를 위한 호환성 변경입니다.
+0.5.2는 WebView가 `Chromium 서버 연결 오류`로 실패한 기기를 위해 목록/검색/상세 HTML 연결을 보정합니다. 오래된 고정 Chrome 사용자 에이전트를 제거하고 **기기에 설치된 최신 System WebView의 실제 UA**를 브라우저 형태로 사용합니다. 목록 WebView는 화면 밖이 아닌 앱 창 안의 1px 연결 뷰로 유지해 일부 제조사의 off-screen/background 연결 실패 가능성도 줄였습니다.
 
 - 서버가 렌더링한 최종 HTML만 기존의 신뢰된 네이티브 파서에 전달하며, 원격 페이지를 앱 UI로 렌더링하지 않습니다.
-- 숨김 목록 WebView에는 JavaScript 인터페이스·파일/콘텐츠 접근·다운로드·새 창·권한이 없고, HTTP/HTTPS 하위 리소스를 차단합니다.
+- 목록 WebView에는 JavaScript 인터페이스·파일/콘텐츠 접근·다운로드·새 창·권한이 없고, HTTP/HTTPS 하위 리소스를 차단합니다.
 - HTTPS·공개 DNS·동일 출처·리디렉션 3회·응답 크기·시간 제한을 유지합니다. 초기화/연결 실패 때만 기존의 엄격한 직접 HTTPS 전송을 fallback으로 사용합니다.
 - 원본 영상 URL·세션·DRM을 추출하거나 우회하지 않습니다. 재생 페이지의 기존 별도 WebView에도 앱 브리지를 추가하지 않습니다.
 
@@ -37,7 +37,7 @@ Android 8.0 이상용 APK입니다. Node.js·PC 서버 없이 기기에서 실�
 
 ## Windows와 배포 채널 분리
 
-- Android는 `android-v0.5.1` 같은 별도 태그와 `updates/android.json`을 씁니다.
+- Android는 `android-v0.5.2` 같은 별도 태그와 `updates/android.json`을 씁니다.
 - **Android Release를 저장소 Latest로 지정하지 마세요.** Windows Latest는 `v0.3.4`로 유지해야 합니다.
 - APK 공개·해시·서명을 먼저 확인한 뒤에만 `updates/android.json`을 새 버전으로 갱신합니다. 같은 공개 버전을 덮어쓰지 않습니다.
 
@@ -61,6 +61,6 @@ Android 8.0 이상용 APK입니다. Node.js·PC 서버 없이 기기에서 실�
 JAVA_HOME=/path/to/jdk17 bash build.sh
 ```
 
-검사 결과는 `TEST-REPORT.md`와 `build-0.5.1.log`를 참고하세요. 키가 없으면 새 키를 몰래 생성하지 않고 빌드를 중단합니다.
+검사 결과는 `TEST-REPORT.md`와 `build-0.5.2.log`를 참고하세요. 키가 없으면 새 키를 몰래 생성하지 않고 빌드를 중단합니다.
 
-**Android 실기기 설치·0.5.0에서 0.5.1로의 실제 자동 업그레이드·시스템 WebView 목록 연결·원본 영상 재생은 미검증**입니다. 알려진 광고 필터를 유지하지만 모든 광고 차단/콘텐츠 동작을 보장하지 않습니다.
+**Android 실기기 설치·0.5.0에서 0.5.2로의 실제 자동 업그레이드·시스템 WebView 목록 연결·원본 영상 재생은 미검증**입니다. 알려진 광고 필터를 유지하지만 모든 광고 차단/콘텐츠 동작을 보장하지 않습니다.
