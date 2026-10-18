@@ -1,11 +1,11 @@
 {
   "schema": 1,
   "packageName": "app.jinsu.tv",
-  "versionCode": 10,
-  "versionName": "0.5.5",
+  "versionCode": 11,
+  "versionName": "0.5.6",
   "minSdk": 26,
   "size": 2569810,
-  "url": "https://github.com/slpbabo-ai/JInsootv/releases/download/android-v0.5.5/JinsuTV-0.5.5-Android.apk",
-  "sha256": "69664aa95745e81dee89fa9b5dfd4cfe3acd829d6577d7a12a3037bbfe5af193",
+  "url": "https://github.com/slpbabo-ai/JInsootv/releases/download/android-v0.5.6/JinsuTV-0.5.6-Android.apk",
+  "sha256": "8c7ccbf7495cf00e8bfffb84baee82da06be01f00c7f512dc0e93203f23e2d6f",
   "certificateSha256": "91c80fd08f32a24980cd7604f53cfd530decd97ceed913202a2a80e79b964616"
 }
