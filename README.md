@@ -5,7 +5,7 @@ Android 8.0 이상용 APK입니다. Node.js·PC 서버 없이 기기에서 실�
 ## 0.5.2 빌드 상태
 
 - APK: `JinsuTV-0.5.2-Android.apk`
-- package `app.jinsu.tv`, versionName `0.5.2`, versionCode `6`, minSdk `26`, targetSdk `35`
+- package `app.jinsu.tv`, versionName `0.5.2`, versionCode `7`, minSdk `26`, targetSdk `35`
 - 크기: **2,569,810 bytes**
 - SHA-256: `e41b16058d60bb63c43b22493e6de73c55cf67f8d642b5e848e5f4986434b0d2`
 - 서명 인증서 SHA-256: `91c80fd08f32a24980cd7604f53cfd530decd97ceed913202a2a80e79b964616` — 0.5.0과 같은 키여서 기존 앱을 지우지 않고 업그레이드할 수 있는 구성입니다.
